@@ -14,14 +14,16 @@
 
     let value1, value2, total, txt;
 
-    value1 = parseFloat(document.getElementById("op-one").value);
-    value2 = parseFloat(document.getElementById("op-two").value);
+   /* value1 = parseFloat(document.getElementById("op-one").innerText);
+    value2 = parseFloat(document.getElementById("op-two").innerText);*/
 
     console.log("Value1: " + value1);
     console.log("Value2: " + value2);
 
     document.getElementById("addition").addEventListener("click", function() {
         // perform an addition
+        value1 = parseFloat(document.getElementById("op-one").value);
+        value2 = parseFloat(document.getElementById("op-two").value);
         total = value1 + value2;
         txt = "The addition result is: " + parseFloat(total);
         alert(txt);
@@ -31,6 +33,8 @@
 
     document.getElementById("substraction").addEventListener("click", function() {
         // perform an substraction
+        value1 = parseFloat(document.getElementById("op-one").value);
+        value2 = parseFloat(document.getElementById("op-two").value);
         total = value1 - value2;
         txt = "The substraction result is: " + parseFloat(total);
         alert(txt);
@@ -40,6 +44,8 @@
 
     document.getElementById("multiplication").addEventListener("click", function() {
         // perform an multiplication
+        value1 = parseFloat(document.getElementById("op-one").value);
+        value2 = parseFloat(document.getElementById("op-two").value);
         total = value1 * value2;
         txt = "The multiplication result is: " + parseFloat(total);
         alert(txt);
@@ -49,6 +55,8 @@
 
     document.getElementById("division").addEventListener("click", function() {
         // perform an division
+        value1 = parseFloat(document.getElementById("op-one").value);
+        value2 = parseFloat(document.getElementById("op-two").value);
         if (value2 != 0) {
             total = value1 / value2;
             txt = "The division result is: " + parseFloat(total);
