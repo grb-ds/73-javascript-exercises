@@ -13,7 +13,8 @@
     // your code here
     let start = 'Hello, World!.';
     alert(start);
-    document.write(start.italics());
+    //document.write("<p>"+start.italics()+"</p>");
+    document.getElementById("txt").innerHTML = start.italics();
     console.log(start.italics());
 })();
 
