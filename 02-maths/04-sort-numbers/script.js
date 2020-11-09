@@ -16,7 +16,24 @@
     document.getElementById("run").addEventListener("click", function() {
 
         // your code here
+        let numbersArray = Array();
+        let ascendingNumbersArray = Array();
+        let descendingNumbersArray = Array();
 
+        let numbersSplit = document.getElementById("numbers").value.split(', ');
+
+        for (let i = 0; i < numbersSplit.length; i++) {
+            numbersArray.push(numbersSplit[i]);
+            console.log(numbersArray[i]);
+        }
+
+        ascendingNumbersArray = numbersArray.sort(function(a,b){return a - b});
+        document.getElementById("resultAscending").innerHTML = ascendingNumbersArray;
+        console.log(ascendingNumbersArray);
+
+        descendingNumbersArray = numbersArray.sort(function(a,b){return b - a});
+        document.getElementById("resultDescending").innerHTML = descendingNumbersArray;
+        console.log(descendingNumbersArray);
     });
 
 })();
