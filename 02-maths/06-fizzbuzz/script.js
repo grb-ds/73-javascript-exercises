@@ -12,5 +12,21 @@
 (function() {
 
     // your code here
+    let text = "", endText ="";
+
+    for (let i = 1; i <= 100; i++) {
+        text = i;
+        if (i%3 == 0){
+            text = text + " fizz";
+            if (i%5 == 0){
+                text += "buzz";
+            }
+        } else if (i%5 == 0){
+            text += " buzz";
+        }
+        endText += text + "<br>"
+        console.log(text);
+    }
+    document.getElementById("result").innerHTML = endText;
 
 })();
