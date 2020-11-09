@@ -13,5 +13,7 @@
     // your code here
     let start = 'Hello, World!.';
     alert(start);
+    document.write(start.italics());
+    console.log(start.italics());
 })();
 
