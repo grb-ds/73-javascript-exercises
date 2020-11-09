@@ -16,6 +16,20 @@
     document.getElementById("run").addEventListener("click", function() {
 
         // your code here
+        let number = parseInt(document.getElementById("number").value);
+        let value = 1;
+
+        if (number == 0 || number == 1) {
+            value = 1;
+        } else {
+            for (let i = 1; i<= number; i++){
+                value *= i;
+            }
+        }
+
+        alert(value);
+        document.getElementById("result").innerHTML = value;
+        console.log(value);
 
     });
 
