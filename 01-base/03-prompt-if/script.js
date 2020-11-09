@@ -12,5 +12,16 @@
 (function() {
 
   // your code here
+    let txt;
+    let value = confirm("Do you want some cake ?");
+
+    if (value == true){
+        txt = "Congratulations!.";
+    } else {
+        txt = "More cake for me then :p !";
+    }
+    alert(txt);
+    document.getElementById("txt").innerHTML = txt.italics();
+    console.log(txt);
 
 })();
