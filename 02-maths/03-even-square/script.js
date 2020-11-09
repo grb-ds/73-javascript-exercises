@@ -14,7 +14,12 @@
     document.getElementById("run").addEventListener("click", function() {
 
         // your code here
-
+        let i;
+        let text ="";
+        for (i = 1; i < 22; i++) {
+            text += "The square of " + i + " is: " + Math.pow(i, 2)  + "<br>";
+        }
+        document.getElementById("result").innerHTML = text;
     });
 
 })();
