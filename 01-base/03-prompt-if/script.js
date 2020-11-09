@@ -13,10 +13,20 @@
 
   // your code here
     let txt;
-    let value = confirm("Do you want some cake ?");
+    let value;
+    let name = prompt("Please enter your name:","Enter your name");
+
+    if (name == null || name == ""){
+        txt = "User cancelled the prompt.";
+    } else {
+        txt = "Hello " + name + "!.";
+    }
+    console.log(txt);
+
+    value = confirm("Do you want some cake ?");
 
     if (value == true){
-        txt = "Congratulations!.";
+        txt = "Congratulations " + name + "!.";
     } else {
         txt = "More cake for me then :p !";
     }
