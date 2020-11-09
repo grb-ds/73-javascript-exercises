@@ -1,3 +1,3 @@
 # 73-javascript-exercises
 
-[Url Challenger: ](https://github.com/becodeorg/gnt-verou-1-26/tree/master/1.The-Field/4.HTML-CSS/5.End-of-Field/2.End-of-Field-Challenge)
+URL Challenger:[Challenger 1.Series-of-73-js-exercises](https://github.com/becodeorg/gnt-verou-1-26/tree/master/2.The-Hill/1.Series-of-73-js-exercises)
