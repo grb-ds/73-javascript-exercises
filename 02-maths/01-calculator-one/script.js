@@ -17,8 +17,8 @@
    /* value1 = parseFloat(document.getElementById("op-one").innerText);
     value2 = parseFloat(document.getElementById("op-two").innerText);*/
 
-    console.log("Value1: " + value1);
-    console.log("Value2: " + value2);
+    /*console.log("Value1: " + value1);
+    console.log("Value2: " + value2);*/
 
     document.getElementById("addition").addEventListener("click", function() {
         // perform an addition
