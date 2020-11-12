@@ -91,4 +91,31 @@
 
     // your code here
 
+    alert("Arrays");
+
+    document.getElementById("run").addEventListener("click", function (){
+
+        let person = people.find(element => element.firstname === "Jean" && element.lastname === "Dupont");
+        let personIndex = people.findIndex(element => element.firstname === "Jean" && element.lastname === "Dupont");
+
+        console.log("e-mail: " + person.email);
+        console.log("index: " + personIndex);
+
+        document.getElementById("target").innerHTML = "Index: " + personIndex +". " + person.email + "<br/>";
+
+
+        //Second way
+        let person2 = people.find(checkPerson);
+        let index2 = people.findIndex(checkPerson);
+        console.log(person2.email);
+        console.log(index2);
+    });
+
+    function checkPerson(value) {
+        return value.firstname == "Jean" && value.lastname == "Dupont";
+    }
+
+
+
+
 })();
