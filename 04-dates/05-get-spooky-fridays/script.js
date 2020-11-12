@@ -12,5 +12,26 @@
 (function() {
 
     // your code here
+    alert("Dates");
+    document.getElementById("run").addEventListener("click", function (){
+
+        let date13;
+        var friday13_months = new Array();
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let year = Number(document.getElementById("year").value);
+
+        for (let month_number = 0; month_number < 12; month_number++){
+            date13 = new Date(year, month_number, 13);
+
+            if (date13.getDay() == 5) {// if the day is friday
+                friday13_months.push(months[date13.getMonth()]);
+                console.log(date13.toString() + " " + months[date13.getMonth()] + " " + days[date13.getDay()]);
+            }
+        }
+
+        document.getElementById("target").innerHTML = friday13_months.toString();
+
+    });
 
 })();

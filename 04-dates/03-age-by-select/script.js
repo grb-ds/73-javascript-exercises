@@ -9,12 +9,11 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-console.log("call");
 
 (function() {
 
     // your code here
-
+    alert("Dates");
 
     document.getElementById("run").addEventListener("click", function (){
 
@@ -43,21 +42,21 @@ console.log("call");
         console.log("age_day :"+ age_day);
 
         if ( age_month > 0 ){ //the user was already on his birthday
-            document.getElementById("age").innerHTML = age;
+            document.getElementById("age").innerHTML = age + " years old";
         }
         else if ( age_month < 0){ //the user has not yet had a birthday
              age = age - 1;
-            document.getElementById("age").innerHTML = age;
+            document.getElementById("age").innerHTML = age + " years old";
         }
         else if ( age_month == 0){ //this is the same month of birthday
             if (age_day > 0 ) { //the user was already on his birthday
-                document.getElementById("age").innerHTML = age;
+                document.getElementById("age").innerHTML = age + " years old";
             } else if(age_day == 0 ) { //today is your birthday
-                document.getElementById("age").innerHTML = age + " Happy Birthday!!";
+                document.getElementById("age").innerHTML = age + " years old. Happy Birthday!!";
             }
             else if (age_day < 0 ) { //the user has not yet had a birthday
                 age = age - 1;
-                document.getElementById("age").innerHTML = age;
+                document.getElementById("age").innerHTML = age + " years old";
             }
         }
     });
