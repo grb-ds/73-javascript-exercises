@@ -27,5 +27,15 @@
     ];
 
     // your code here
+    alert("Arrays");
+
+    document.getElementById("run").addEventListener("click", function (){
+        document.getElementById("target").innerHTML = "";
+        fruits.forEach((element,index) => {
+            console.log( index + ". " + element);
+            document.getElementById("target").innerHTML += index + ". " + element + "<br/>";
+        });
+
+    });
 
 })();
