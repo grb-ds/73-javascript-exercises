@@ -18,12 +18,17 @@
     console.log(d.toString());
     console.log(d.getHours());
     console.log(d.getMinutes());
-    if (d.getHours() < 18){
-        if (d.getMinutes() < 30){
-            document.getElementById("target").innerText = "Hello!";
+    if (d.getHours() < 18) {
+
+        if (d.getMinutes() <= 30) {
+            document.getElementById("target").innerText = "Hello";
         }
-    }else{
+        else {
+            document.getElementById("target").innerText = "Good evening!!";
+        }
+    }  else{
         document.getElementById("target").innerText = "Good evening!";
+
     }
 
 })();

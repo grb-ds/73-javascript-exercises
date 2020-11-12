@@ -15,4 +15,20 @@
 
     // your code here
 
+
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    let current_date = new Date();
+    let current_day = days[current_date.getDay()];
+    let current_day_number = current_date.getDate();
+    let current_month = months[current_date.getMonth()];
+    let current_year = current_date.getFullYear();
+    let current_hours = current_date.getHours();
+    let current_minutes = current_date.getMinutes();
+
+    document.getElementById("target").innerHTML = current_day + " " +
+        current_day_number + " " + current_month + " " +  current_year + ", " + current_hours + "h" + current_minutes;
+
 })();
+
