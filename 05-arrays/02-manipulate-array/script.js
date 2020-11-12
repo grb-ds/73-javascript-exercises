@@ -25,5 +25,18 @@
     ];
 
     // your code here
+    alert("Arrays");
+
+    document.getElementById("run").addEventListener("click", function (){
+
+        fruits.shift();
+        fruits.pop();
+        fruits.unshift("banana");
+        fruits.push("kiwi");
+
+        console.log(fruits.toString());
+        document.getElementById("target").innerHTML = fruits.toString();
+
+    });
 
 })();
