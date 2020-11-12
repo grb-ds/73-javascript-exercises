@@ -27,5 +27,15 @@
     ];
 
     // your code here
+    alert("Arrays");
+
+    document.getElementById("run").addEventListener("click", function (){
+        document.getElementById("target").innerHTML = "";
+
+        for (let i = 0; i < fruits.length; i++ ){
+            console.log(i + ". " + fruits[i]);
+            document.getElementById("target").innerHTML += i + ". " + fruits[i] + "<br/>";
+        }
+    });
 
 })();
