@@ -39,4 +39,19 @@
     ]);
 
     // your code here
+    alert("Arrays 14");
+    document.getElementById("run").addEventListener("click", function (){
+       let bird = birds[Math.floor(Math.random() * birds.length)];
+       let adjective = Array.from(adjectives)[Math.floor(Math.random() * adjectives.size)];
+
+        if (bird.num > 1){
+            console.log(`A ${adjective} ${bird.name}`);
+            document.getElementById("target").innerHTML = `A ${adjective} ${bird.name}`;
+        }else{
+            console.log(`A few ${adjective} ${bird.name}s`);
+            document.getElementById("target").innerHTML = `A few ${adjective} ${bird.name}s`;
+        }
+
+    });
+
 })();
