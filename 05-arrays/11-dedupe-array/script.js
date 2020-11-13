@@ -29,5 +29,20 @@
     ];
 
     // your code here
+    alert("Arrays 11");
+    document.getElementById("run").addEventListener("click", function (){
+
+        let new_fruits = new Array();
+
+        fruits.forEach(fruit => {
+           let fruit_finded = new_fruits.find(new_fruit => new_fruit === fruit);
+           if (fruit_finded == null)
+               new_fruits.push(fruit);
+        });
+
+        console.log(new_fruits.toString());
+        document.getElementById("target").innerHTML = new_fruits.toString();
+
+    })
 
 })();
