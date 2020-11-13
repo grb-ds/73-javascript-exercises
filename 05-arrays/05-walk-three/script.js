@@ -44,6 +44,7 @@
 
     document.getElementById("run").addEventListener("click", function (){
         document.getElementById("target").innerHTML = "";
+
         people.forEach((value,index) => {
             console.log(index + ". " + value.firstname);
             document.getElementById("target").innerHTML += index + ". " + value.firstname + "<br/>";
