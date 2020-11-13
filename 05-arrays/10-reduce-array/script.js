@@ -91,4 +91,17 @@
 
     // your code here
 
+    alert("Array 10");
+    document.getElementById("run").addEventListener("click", function (){
+        let average = people.reduce((previousValue, currentValue) => previousValue + currentValue.age,0)/people.length;
+
+        Array.from(people.values()).forEach(person=>{
+            console.log(person.age);
+        });
+
+        document.getElementById("target").innerHTML = Math.round(average).toString();
+        console.log("average age " + Math.round(average).toString());
+
+    });
+
 })();
