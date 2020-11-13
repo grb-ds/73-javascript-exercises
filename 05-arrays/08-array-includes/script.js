@@ -27,5 +27,13 @@
     ];
 
     // your code here
+    alert("Arrays");
+
+    document.getElementById("run").addEventListener("click", function (){
+
+        document.getElementById("target").innerHTML = fruits.includes("apple").toString();
+        console.log(fruits.includes("apple"));
+
+    });
 
 })();
