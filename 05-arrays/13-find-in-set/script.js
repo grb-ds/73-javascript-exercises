@@ -23,4 +23,16 @@
     ]);
 
     // your code here
+    alert("Arrays 13");
+    document.getElementById("run").addEventListener("click", function (){
+
+        console.log(`The number of the people is : ${people.size}`);
+        document.getElementById("target").innerHTML = `The number of the people is : ${people.size} <br/>`;
+
+        people.has("Alexandre") ? console.log(`Alexandre is part of the Set.`) : console.log(`Alexandre's not part of the Set.`);
+
+        people.has("Alexandre") ?
+            document.getElementById("target").innerHTML += `Alexandre is part of the Set.` :
+            document.getElementById("target").innerHTML += `Alexandre's not part of the Set.`;
+    });
 })();
