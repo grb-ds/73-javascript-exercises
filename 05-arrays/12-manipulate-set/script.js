@@ -24,4 +24,20 @@
     ]);
 
     // your code here
+
+    alert("Array 12");
+    document.getElementById("run").addEventListener("click", function (){
+        fruits.delete("apple");
+        fruits.delete("cerise")
+        fruits.add("banana");
+        fruits.add("kiwi");
+
+        fruits.forEach(fruit => {
+            console.log(fruit);
+            document.getElementById("target").innerHTML += `${fruit} </br>`;
+        });
+
+
+    });
+
 })();
