@@ -9,6 +9,26 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
+
+
+var person = {
+    firstName: "Giomayra",
+    lastName : "Rosales",
+    age      : 35,
+    city     : "Ghent",
+    country  : "Belgium"
+};
+
+alert("Objects 1");
+
 (() => {
     // your code here
+
+    document.getElementById("run").addEventListener("click", function () {
+        Object.entries(person).forEach(([key, val]) => {
+            console.log(key, val);
+            document.getElementById("target").innerHTML += `${key}: ${val} <br/>`
+        });
+    });
+
 })();
