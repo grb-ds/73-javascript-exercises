@@ -37,8 +37,8 @@ alert("Objects 3");
         index = 0;
         Object.entries(person).forEach(([key, val]) => {
             index++;
-            console.log(`Value [${key}] : ${val} `);
-            document.getElementById("target2").innerHTML += `Value [${key}] : ${val} <br/>`
+            console.log(`Value ${key} : ${val} `);
+            document.getElementById("target2").innerHTML += `${key} : ${val} <br/>`
         });
 
 
