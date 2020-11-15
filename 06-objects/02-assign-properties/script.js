@@ -29,54 +29,62 @@ alert("Objects 2");
     };
     // your code here
 
-    var computerObject = {
-        id:"",
-        available: true,
-        os: "linux",
-        user: null,
-       /* [Symbol.iterator]() {
-            return [][Symbol.iterator]()
-        },*/
-    };
+    let defaultPropsDescriptors = Object.getOwnPropertyDescriptors(defaultProps);
 
+    //This function return a new object with the properties and values complete
+    // without the reference of source object
+    function completeAssign(sourceObject) {
 
-    // This is an assign function that copies descriptors and value
-    function completeAssign(objectTarget, objectSource) {
-        let objectSourceProperties = Object.getOwnPropertyDescriptors(objectSource);
+        let targetObject = new Object();
 
-        for (let current_property in objectSourceProperties) {
-            if (!objectTarget.hasOwnProperty(current_property)) {
-               objectTarget[current_property] = objectSource[current_property];
+        for (let targetObjectEntry in sourceObject){
+            Object.assign(targetObject, { [targetObjectEntry]: sourceObject[targetObjectEntry] });
+        }
+
+        for (let current_property in defaultPropsDescriptors) {
+            if (!targetObject.hasOwnProperty(current_property)) {
+               Object.assign(targetObject, { [current_property]: defaultProps[current_property] });
             }
         }
-        return objectTarget;
+        return targetObject;
     }
 
     document.getElementById("run").addEventListener("click", function () {
 
-         let new_computers = computers.slice(0, computers.length);
-
-         console.log("Original Computers");
-
-         computers.forEach(computer => {
-             console.log(computer);
-         });
-
-         console.log("Complete Computers");
-
-         new_computers.forEach(new_computer => {
-             new_computer = completeAssign(new_computer,computerObject);
-         });
-
+        let new_computers = [];
         let index = 0;
-         new_computers.forEach(new_computer => {
-             index++;
-             console.log(new_computer);
-             document.getElementById("target").innerHTML += `Computer ${index}: `
-             Object.entries(new_computer).forEach(([key, val]) => {
-                 document.getElementById("target").innerHTML += `${key}: ${val}, `
-             });
-             document.getElementById("target").innerHTML += '<br/>'
+        document.getElementById("target1").innerHTML = '';
+        document.getElementById("target2").innerHTML = '';
+
+        computers.forEach(computer => {
+             let new_computer = completeAssign(computer);
+            new_computers.push(new_computer);
          });
+
+        console.log("Original Computers");
+
+        computers.forEach(current_computer => {
+            index++;
+            console.log(current_computer);
+            document.getElementById("target1").innerHTML += ` Original Computer ${index}: `
+            Object.entries(current_computer).forEach(([key, val]) => {
+                document.getElementById("target1").innerHTML += `${key}: ${val}, `
+            });
+            document.getElementById("target1").innerHTML += '<br/>'
+        });
+
+        index = 0;
+        console.log("Complete Computers");
+
+        new_computers.forEach(current_new_computer => {
+            index++;
+            console.log(current_new_computer);
+            document.getElementById("target2").innerHTML += `New Computer ${index}: `
+            Object.entries(current_new_computer).forEach(([key, val]) => {
+                document.getElementById("target2").innerHTML += `${key}: ${val}, `
+            });
+            document.getElementById("target2").innerHTML += '<br/>'
+        });
+
     });
 })();
