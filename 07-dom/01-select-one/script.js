@@ -14,5 +14,6 @@
     // your code here
 
     document.getElementById("target").innerHTML = "owned";
+    document.querySelector("#target").innerHTML += "!";
 
 })();
