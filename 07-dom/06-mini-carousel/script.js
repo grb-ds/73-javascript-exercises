@@ -20,5 +20,34 @@
     ];
 
     // your code here
+/*    <img src="../../_shared/img/bell.svg" alt="Carousel" />
+</figure>
+<div class="actions">
+<button type="button" id="next">Next image</button>*/
+
+    const getFileName = (path) =>{
+        let lastIndex = path.lastIndexOf("/") +1;
+        return path.slice(lastIndex,path.length);
+    }
+
+    const next = () =>{
+        return function () {
+            let imgNode = document.getElementById("target")
+            let fileNameImg = getFileName(imgNode.src);
+            console.log("fileNameImg: " + fileNameImg);
+
+            let index = gallery.findIndex(value => getFileName(value) === getFileName(fileNameImg));
+            console.log(index);
+
+            index === gallery.length - 1 ? imgNode.src = gallery[0] : imgNode.src = gallery[index + 1];
+
+        };
+    };
+
+    document.getElementById("next").addEventListener("click", next());
+
+
+
+
 
 })();
