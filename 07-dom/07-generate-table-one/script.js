@@ -13,4 +13,22 @@
 
     // your code here
 
+    function tableCreate(target, rowsNumber, cellsNumber){
+        let elementTarget = document.getElementById(target);
+        let table = document.createElement('table');
+
+        for(let i = 0; i < rowsNumber; i++){
+            let tr = table.insertRow();
+            for(let j = 0; j < cellsNumber; j++){
+                let td = tr.insertCell();
+                td.appendChild(document.createTextNode(`Row ${i} Cell ${j}`));
+            }
+        }
+        elementTarget.appendChild(table);
+    }
+
+    tableCreate("target",10,1);
+
+
+
 })();
