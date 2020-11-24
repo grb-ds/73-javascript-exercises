@@ -13,4 +13,12 @@
 
     // your code here
 
+    let url = document.querySelector("#source").getAttribute("data-image");
+
+    var img = document.createElement('img');
+    img.src = url;
+   /* document.getElementById('target').appendChild(img);*/
+    document.querySelector('#target').appendChild(img);
+    document.getElementById("source").remove();
+
 })();

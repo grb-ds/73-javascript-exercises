@@ -13,4 +13,26 @@
 
     // your code here
 
+    document.getElementsByTagName("img")[0].addEventListener("mouseover", mouseOver);
+    document.getElementsByTagName("img")[0].addEventListener("mouseout", mouseOut);
+
+
+    function mouseOver() {
+        let nodeImg = document.getElementsByTagName("img")[0];
+        let url = nodeImg.getAttribute("data-hover");
+        nodeImg.setAttribute("src",url);
+
+    }
+
+    function mouseOut() {
+        let nodeImg = document.getElementsByTagName("img")[0];
+        let url = nodeImg.getAttribute("data-hover");
+        nodeImg.style.backgroundColor = "blue";
+
+    }
+
+
 })();
+
+
+
