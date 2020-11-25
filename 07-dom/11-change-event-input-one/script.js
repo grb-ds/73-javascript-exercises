@@ -13,4 +13,39 @@
 
     // your code here
 
+    var cont = 0;
+    var maxLength = 10;
+
+    document.querySelector("#pass-one").maxLength = maxLength;
+
+    function updateValue(e) {
+        console.log(e);
+        let inputString = e.target.value;
+        console.log("inputString: " + inputString);
+
+        document.getElementById("counter").innerHTML = inputString.length.toString() + "/10";
+    }
+
+    function keyCount(e) {
+        console.log(e);
+        console.log(e.target.value);
+
+        if (e.keyCode !== 8) { //Backspace
+            if (cont < maxLength)
+                cont++;
+        }else {
+            if (cont < maxLength)
+                cont--;
+        }
+
+        document.getElementById("counter").innerHTML = cont.toString() + "/10";
+    }
+
+
+    document.querySelector("#pass-one").addEventListener('input', updateValue);
+    /*document.querySelector("#pass-one").addEventListener('keypress', keyCount);*/
+    //document.querySelector("#pass-one").addEventListener('keydown', keyCount);
+
+
+
 })();
