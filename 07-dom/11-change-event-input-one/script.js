@@ -13,7 +13,7 @@
 
     // your code here
 
-    var cont = 0;
+   /* var cont = 0;*/
     var maxLength = 10;
 
     document.querySelector("#pass-one").maxLength = maxLength;
@@ -26,7 +26,7 @@
         document.getElementById("counter").innerHTML = inputString.length.toString() + "/10";
     }
 
-    function keyCount(e) {
+    /*function keyCount(e) {
         console.log(e);
         console.log(e.target.value);
 
@@ -40,7 +40,7 @@
 
         document.getElementById("counter").innerHTML = cont.toString() + "/10";
     }
-
+*/
 
     document.querySelector("#pass-one").addEventListener('input', updateValue);
     /*document.querySelector("#pass-one").addEventListener('keypress', keyCount);*/
