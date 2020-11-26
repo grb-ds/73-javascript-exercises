@@ -13,4 +13,22 @@
 
     // your code here
 
+    let originalText = document.querySelector("#target").firstChild.nodeValue;
+    console.log(originalText);
+    let textSplit = originalText.split(/[\!(...)]+/)
+
+    let textSplit0 = textSplit[0].fontsize(5);
+    let textSplit1 = textSplit[1].fontsize(7);
+
+    let textSplit2 = textSplit[2].fontsize(5);
+    let textSplit3 = textSplit[3].fontsize(10);
+
+    let textSplit4 = textSplit[4].fontsize(5);
+
+
+    //document.querySelector("#target").firstChild.textContent = textSplit0 + textSplit1  + textSplit2 + textSplit3  + textSplit4;
+    //document.querySelector("#target").firstChild.nodeValue = textSplit0 + textSplit1  + textSplit2 + textSplit3  + textSplit4;
+
+    document.getElementById("target").innerHTML = textSplit0 + textSplit1  + textSplit2 + textSplit3  + textSplit4;
+
 })();
