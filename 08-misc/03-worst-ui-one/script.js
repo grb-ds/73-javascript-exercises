@@ -13,4 +13,9 @@
 
     // your code here
 
+    document.getElementById("slider").addEventListener("change", function(e) {
+        console.log(e);
+        document.getElementById("target").textContent = "0" + this.value;
+    }, false);
+
 })();
