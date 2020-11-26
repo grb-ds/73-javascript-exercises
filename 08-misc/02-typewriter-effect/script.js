@@ -13,4 +13,26 @@
 
     // your code here
 
+    var i = 0;
+    var text = document.querySelector("#target").firstChild.nodeValue;
+    var speed = 0;
+
+    document.getElementById("target").innerHTML = "";
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("target").innerHTML += text.charAt(i);
+            i++;
+            speed = getRandomInt(50,100);
+            console.log(speed);
+            setTimeout(typeWriter, speed);
+        }
+    }
+
+    window.onload = typeWriter;
+
 })();
