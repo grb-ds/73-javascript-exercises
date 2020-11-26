@@ -15,13 +15,19 @@
 
     let originalText = document.querySelector("#target").firstChild.nodeValue;
     console.log(originalText);
+    //Woo-hoo! I'm making waves! Wéééé! Oh ... I think I'm having seasickness ...
+
+
     let textSplit = originalText.split(/[\!(...)]+/)
-
+    textSplit[0] += "!";
     let textSplit0 = textSplit[0].fontsize(5);
+    textSplit[1] += "!";
     let textSplit1 = textSplit[1].fontsize(7);
-
+    textSplit[2] += "!";
     let textSplit2 = textSplit[2].fontsize(5);
+    textSplit[3] += " ...";
     let textSplit3 = textSplit[3].fontsize(10);
+    textSplit[4] += "...";
 
     let textSplit4 = textSplit[4].fontsize(5);
 
