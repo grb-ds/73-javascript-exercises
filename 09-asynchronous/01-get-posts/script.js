@@ -13,19 +13,24 @@
     // your code here
 
     /**
-     *  Print in the console each item of Utils Array
-     *  and catch and print errors in the console
+     *  Print in the console each post item of Utils Array
+     *  and catch errors and print error in the console
      */
-    const print = (error, itemsUtil) =>{
+    const print = (error, posts) =>{
         try {
-            itemsUtil.forEach(item =>console.log(item));
+            console.log(posts);
+            //posts.forEach(post =>console.log(post));
+            //posts.forEach((post,index) =>console.log(index,post));
+            posts.forEach((post,index) => console.log("Index: "+index, post));
         }
         catch(error){
-            console.error(error);
+            console.error(error.name);
+            console.error(error.message);
+            console.error(error.stack);
         }
     };
 
-    document.querySelector("#run").addEventListener("click", function(){
+    document.querySelector("#run").addEventListener("click", () => {
         //getPosts receive a callback and return a random Utils Array
         //it is implements in _shared/callbacks.js
         window.lib.getPosts(print);
