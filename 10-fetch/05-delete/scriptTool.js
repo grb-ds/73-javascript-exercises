@@ -1,6 +1,6 @@
 /* becode/javascript
  *
- * /09-fetch/03-details/script.js - 11.3: details
+ * /09-fetch/05-delete/script.js - 11.5: supprimer un élément
  *
  * coded by leny@BeCode
  * started at 12/05/2019
@@ -8,12 +8,13 @@
 
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
+
 alert("here");
 
 (() => {
     // your code here
 
-     /**
+    /**
      * Display data in code element with JSON.stringify
      */
     const displayJSONCode = (jsonData) =>{
@@ -26,6 +27,47 @@ alert("here");
         document.querySelector("#target2").appendChild(node);
         document.querySelector("#target2").style.textAlign = "left";
         document.querySelector("#codeTarget").innerHTML = "<pre>"+stringData+"</pre>";
+    }
+
+    /**
+     * Remove heroe in JSONData
+     */
+    const removeItemData = (jsonData, id) =>{
+        const itemIndex = jsonData.findIndex(item => item.id === id);
+
+        if(itemIndex !== -1){
+            //delete jsonData[itemIndex]; //show empty
+            jsonData.splice(itemIndex,1);
+            console.log(jsonData);
+        };
+    }
+
+    /**
+     * Add heroe to JSON
+     */
+    const addItemData = (jsonData) =>{
+        let heroeName = document.querySelector("#hero-name").value;
+        let heroeAlterEgo = document.querySelector("#hero-alter-ego").value;
+        let heroePowers = document.querySelector("#hero-powers").value;
+        let newHeroe = {};
+
+        try {
+            if (heroeName !== "" && heroeAlterEgo !== "" && heroePowers !== ""){
+                newHeroe.id = Object.keys(jsonData).length + 1;
+                newHeroe.name = heroeName;
+                newHeroe.alterEgo = heroeAlterEgo;
+                newHeroe.abilities = heroePowers.split(",");
+                jsonData.push(newHeroe);
+                console.log(jsonData);
+            }
+            else {
+                alert("Please, fill all the values");
+                console.log("Please, fill all the values");
+            }
+        }
+        catch (e){
+            console.error(e);
+        }
     }
 
     /**
@@ -77,27 +119,23 @@ alert("here");
         return await fetch(`${basePath}/heroes`,{});
     };
 
-    const callAPI = () => {
+    const deleteAPIHeroe = () => {
         const basePath = "http://localhost:3000";
         try {
             let heroId = parseInt(document.querySelector("#hero-id").value);
-            let heroesResponse = callHeroesRequestById(basePath,heroId);
+            let heroesResponse = callHeroesRequest(basePath);
             console.log(heroesResponse);
             heroesResponse
                 .then((response) => {
-                   if (response.status === 200) {
+                    if (response.status === 200) {
                         return (response.json());
-                   } else {
-                       clearTarget();
-                       alert("Please, Try with another heroe ID");
-                       throw Error(response.status);
-                   }
+                    } else {
+                        throw Error(response.status);
+                    }
                 })
-                .then((data) => {
-                    console.log(data);
-                    clearTarget();
-                    displayItemData(data);
-                    //displayJSONCode(data);
+                .then((jsonData) => {
+                    console.log(jsonData);
+                    removeItemData(jsonData, heroId);
                 })
                 .catch(error => {
                     console.error(error.name);
@@ -113,7 +151,9 @@ alert("here");
         //TODO: HANDLE STATUS ???
     };
 
-    document.querySelector("#run").addEventListener("click", callAPI);
+
+
+    document.querySelector("#run").addEventListener("click", deleteAPIHeroe);
 
     /**
      * Clear target Node
