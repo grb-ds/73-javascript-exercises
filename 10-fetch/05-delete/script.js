@@ -39,6 +39,7 @@ alert("FETCH 05");
             //delete jsonData[itemIndex]; //show empty
             jsonData.splice(itemIndex,1);
             console.log(jsonData);
+            alert("Great! You delete the Heroe!");
         };
     }
 
